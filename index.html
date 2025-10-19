@@ -1,0 +1,271 @@
+<!doctype html>
+<!--[if lt IE 9]> <html class="no-js oldie" lang="de"> <![endif]-->
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Geschichte von Standard Oil und John D. Rockefeller — eine moderne, responsive Landingpage mit Zeitstrahl, wichtigen Fakten, Animationen und interaktiven Elementen.">
+  <meta name="author" content="Erstellt mit ChatGPT">
+
+  <title>Standard Oil & John D. Rockefeller — Geschichte</title>
+
+  <!-- Favicons (optional) -->
+  <link rel="icon" href="/favicon.ico">
+
+  <!-- Haupt-Stylesheet (wird vom Benutzer später erstellt) -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Open Graph / Social Preview -->
+  <meta property="og:title" content="Standard Oil & John D. Rockefeller — Geschichte">
+  <meta property="og:description" content="Interaktive und moderne Präsentation zur Geschichte von Standard Oil und John D. Rockefeller.">
+  <meta property="og:type" content="website">
+
+  <!-- Webfont (optional) -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Progressive enhancement: small inline critical CSS for FOUC avoidance -->
+  <style>
+    :root{--bg:#0f1724;--card:#0b1220;--muted:#9aa4b2;--accent:#ffb703;--glass:rgba(255,255,255,0.04)}
+    html,body{height:100%}
+    body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;margin:0;background:linear-gradient(180deg,#071020 0%,var(--bg) 100%);color:#e6eef6}
+    a{color:inherit}
+    img{max-width:100%;height:auto;display:block}
+    .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+  </style>
+
+</head>
+<body>
+  <!-- Preloader / initial animation -->
+  <div id="preloader" aria-hidden="true">
+    <svg width="120" height="24" viewBox="0 0 120 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <rect x="0" y="0" width="24" height="24" rx="4" class="pl-dot"></rect>
+      <rect x="32" y="0" width="24" height="24" rx="4" class="pl-dot"></rect>
+      <rect x="64" y="0" width="24" height="24" rx="4" class="pl-dot"></rect>
+      <rect x="96" y="0" width="24" height="24" rx="4" class="pl-dot"></rect>
+    </svg>
+  </div>
+
+  <header class="site-header">
+    <div class="container nav-grid">
+      <a href="#hero" class="brand" aria-label="Zur Startseite">
+        <!-- simple logo: monogram SVG -->
+        <svg width="40" height="40" viewBox="0 0 100 100" role="img" aria-hidden="true">
+          <rect rx="18" width="100" height="100" fill="white" opacity="0.06"></rect>
+          <text x="50%" y="57%" dominant-baseline="middle" text-anchor="middle" font-family="Inter" font-weight="700" font-size="48" fill="white">S</text>
+        </svg>
+        <span class="brand-text">Standard Oil</span>
+      </a>
+
+      <nav class="main-nav" aria-label="Hauptnavigation">
+        <ul>
+          <li><a href="#timeline">Zeitstrahl</a></li>
+          <li><a href="#figures">Personen</a></li>
+          <li><a href="#legacy">Nachwirkung</a></li>
+          <li><a href="#sources">Quellen</a></li>
+        </ul>
+      </nav>
+
+      <button id="menu-toggle" class="menu-toggle" aria-expanded="false" aria-controls="mobile-nav">
+        <span class="sr-only">Menü öffnen</span>
+        <svg width="28" height="28" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path></svg>
+      </button>
+    </div>
+
+    <!-- mobile navigation panel -->
+    <div id="mobile-nav" class="mobile-nav" hidden>
+      <ul>
+        <li><a href="#timeline">Zeitstrahl</a></li>
+        <li><a href="#figures">Personen</a></li>
+        <li><a href="#legacy">Nachwirkung</a></li>
+        <li><a href="#sources">Quellen</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero / Lead Section -->
+    <section id="hero" class="hero" role="region" aria-label="Einführung">
+      <div class="container hero-grid">
+        <div class="hero-text">
+          <h1>Standard Oil &amp; John D. Rockefeller</h1>
+          <p class="lead">Von bescheidenen Anfängen zum Giganten: Wie Standard Oil die Ölindustrie formte — und warum John D. Rockefeller in der Geschichte als einer der einflussreichsten und umstrittensten Unternehmer gilt.</p>
+
+          <div class="hero-cta">
+            <a href="#timeline" class="btn-primary">Zeitstrahl erkunden</a>
+            <button id="play-story" class="btn-ghost">Story-Animation starten</button>
+          </div>
+
+          <ul class="hero-stats" aria-hidden="true">
+            <li><strong>1870</strong><span>Gründung von Standard Oil</span></li>
+            <li><strong>1911</strong><span>Auflösung durch Oberstes Gericht (USA)</span></li>
+            <li><strong>>30</strong><span>Nachfolgefirmen (u.a. Exxon, Mobil)</span></li>
+          </ul>
+        </div>
+
+        <div class="hero-media" aria-hidden="false">
+          <!-- decorative illustration / responsive image -->
+          <picture>
+            <source srcset="images/rockefeller-hero-large.jpg" media="(min-width:900px)">
+            <source srcset="images/rockefeller-hero-medium.jpg" media="(min-width:480px)">
+            <img src="images/rockefeller-hero-small.jpg" alt="porträt von John D. Rockefeller (historische Fotografie)" loading="lazy">
+          </picture>
+        </div>
+      </div>
+    </section>
+
+    <!-- Timeline Section -->
+    <section id="timeline" class="section timeline" aria-labelledby="timeline-title">
+      <div class="container">
+        <h2 id="timeline-title">Zeitstrahl — Meilensteine</h2>
+        <p class="muted">Interaktiver Zeitstrahl von 1863 bis 1911. Klicke oder tippe auf ein Ereignis, um Details zu sehen.</p>
+
+        <div class="timeline-viewport" role="list">
+          <!-- Each .timeline-item has data attributes that script.js nutzt für interaktion/animation -->
+          <article class="timeline-item" data-year="1863" role="listitem" tabindex="0">
+            <div class="ti-year">1863</div>
+            <h3 class="ti-title">Rockefeller beginnt im Ölgeschäft</h3>
+            <p class="ti-excerpt">John D. Rockefeller startet in Cleveland als Geschäftsmann im Rohöl- und Raffineriegeschäft.</p>
+            <button class="ti-more">Mehr</button>
+          </article>
+
+          <article class="timeline-item" data-year="1870" role="listitem" tabindex="0">
+            <div class="ti-year">1870</div>
+            <h3 class="ti-title">Gründung von Standard Oil</h3>
+            <p class="ti-excerpt">Formelle Gründung von Standard Oil of Ohio, Beginn einer aggressiven Expansionsstrategie.</p>
+            <button class="ti-more">Mehr</button>
+          </article>
+
+          <article class="timeline-item" data-year="1882" role="listitem" tabindex="0">
+            <div class="ti-year">1882</div>
+            <h3 class="ti-title">Trust-Bildung</h3>
+            <p class="ti-excerpt">Standard Oil konsolidiert viele Firmen unter einem Trust, um Kontrolle und Effizienz zu steigern.</p>
+            <button class="ti-more">Mehr</button>
+          </article>
+
+          <article class="timeline-item" data-year="1890" role="listitem" tabindex="0">
+            <div class="ti-year">1890</div>
+            <h3 class="ti-title">Antitrust-Gesetze</h3>
+            <p class="ti-excerpt">Wachsende politische und öffentliche Kritik führt zu ersten kartellrechtlichen Debatten.</p>
+            <button class="ti-more">Mehr</button>
+          </article>
+
+          <article class="timeline-item" data-year="1911" role="listitem" tabindex="0">
+            <div class="ti-year">1911</div>
+            <h3 class="ti-title">Auflösung des Trusts</h3>
+            <p class="ti-excerpt">Der Oberste Gerichtshof der USA erklärt Standard Oil für einen unrechtmäßigen Trust und ordnet die Auflösung an.</p>
+            <button class="ti-more">Mehr</button>
+          </article>
+        </div>
+
+        <!-- Modal / Detail panel für Timeline-Events (wird per JS gesteuert) -->
+        <div id="timeline-modal" class="modal" aria-hidden="true" role="dialog" aria-modal="true">
+          <div class="modal-inner" role="document">
+            <button class="modal-close" aria-label="Schließen">×</button>
+            <div id="modal-content"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Figures / Personen -->
+    <section id="figures" class="section figures" aria-labelledby="figures-title">
+      <div class="container">
+        <h2 id="figures-title">Wichtige Personen</h2>
+        <div class="grid-3">
+          <article class="card person-card" data-person="rockefeller">
+            <img src="images/john-rockefeller.jpg" alt="John D. Rockefeller">
+            <div class="card-body">
+              <h3>John D. Rockefeller</h3>
+              <p class="muted">(1839–1937) Gründer von Standard Oil, Philanthrop und kontroverse Persönlichkeit.</p>
+              <details>
+                <summary>Kurzbiographie</summary>
+                <p>Rockefeller baute Standard Oil zu einem der mächtigsten Industriekonzerne seiner Zeit auf und wurde häufig als Sinnbild für industrielle Monopole genannt. Später widmete er sich intensiver Philanthropie.</p>
+              </details>
+            </div>
+          </article>
+
+          <article class="card person-card" data-person="flagler">
+            <img src="images/henry-flagler.jpg" alt="Henry Flagler">
+            <div class="card-body">
+              <h3>Henry M. Flagler</h3>
+              <p class="muted">Mitbegründer und enger Geschäftspartner — baute Infrastruktur &amp; Eisenbahnen.</p>
+            </div>
+          </article>
+
+          <article class="card person-card" data-person="stanford">
+            <img src="images/standard-oil-exec.jpg" alt="historisches Bild von Standard Oil Managern">
+            <div class="card-body">
+              <h3>Weitere Führungskräfte</h3>
+              <p class="muted">Manager, Anwälte und Investoren, die Standard Oil administrative Stärke verliehen.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Legacy / Nachwirkung -->
+    <section id="legacy" class="section legacy" aria-labelledby="legacy-title">
+      <div class="container">
+        <h2 id="legacy-title">Nachwirkung &amp; Einfluss</h2>
+        <p>Standard Oil beeinflusste Wettbewerbspolitik, Unternehmensstruktur und die Entstehung moderner Großunternehmen. Viele heutige Ölkonzerne entspringen der Aufspaltung.</p>
+
+        <div class="legacy-grid">
+          <div class="card small">
+            <h4>Wirtschaft</h4>
+            <p class="muted">Formte Marktstandards, Vertriebsnetzwerke und vertikale Integration.</p>
+          </div>
+          <div class="card small">
+            <h4>Recht</h4>
+            <p class="muted">Die Auflösung 1911 legte Grundlagen für US-Antitrustgesetzgebung.</p>
+          </div>
+          <div class="card small">
+            <h4>Philanthropie</h4>
+            <p class="muted">Rockefellers Stiftung prägte Gesundheitswesen, Bildung und Forschung.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sources / References -->
+    <section id="sources" class="section sources" aria-labelledby="sources-title">
+      <div class="container">
+        <h2 id="sources-title">Quellen &amp; weiterführende Literatur</h2>
+        <p class="muted">Diese Seite ist eine Bildungsressource. Für wissenschaftliche Arbeit bitte primäre Quellen und wissenschaftliche Publikationen zitieren.</p>
+        <ul>
+          <li>Standford, John &amp; Historische Archivdokumente (Empfohlene Lektüre)</li>
+          <li>Biographien und wissenschaftliche Artikel zu Rockefeller und Standard Oil</li>
+          <li>Oberster Gerichtshof USA, Urteil 1911 – Standard Oil Co. of New Jersey v. United States</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <p>&copy; <span id="year"></span> Geschichte von Standard Oil — erstellt als Beispielprojekt.</p>
+      <nav aria-label="Footer navigation">
+        <ul>
+          <li><a href="#sources">Quellen</a></li>
+          <li><a href="#hero">Kontakt</a></li>
+        </ul>
+      </nav>
+    </div>
+  </footer>
+
+  <!-- Verknüpfung zum JavaScript (wird später erstellt) -->
+  <script src="script.js" defer></script>
+
+  <!-- Fallback: kleines Inline-Script für progressive enhancement, nur für kritische, minimale Funktionalität -->
+  <script>
+    (function(){
+      // set current year
+      try{document.getElementById('year').textContent = new Date().getFullYear()}catch(e){}
+      // simple preloader hide if JS runs
+      var pre = document.getElementById('preloader'); if(pre){pre.style.display='none'}
+    })();
+  </script>
+
+  <!-- Hinweise für Entwickler: Die Datei script.js sollte die Interaktionen (Timeline-Modal, Mobile-Menu, Animation-Trigger) übernehmen. style.css enthält das visuelle Design, Layout & Animationen. -->
+
+</body>
+</html>
