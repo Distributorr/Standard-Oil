@@ -1,0 +1,415 @@
+/* ===========================
+   STYLE.CSS — Standard Oil Website
+   =========================== */
+
+/* ----------- Basis & Variablen ----------- */
+:root {
+  --bg: #0f1724;
+  --bg-light: #182132;
+  --card: rgba(255, 255, 255, 0.05);
+  --accent: #ffb703;
+  --text: #e6eef6;
+  --muted: #9aa4b2;
+  --radius: 16px;
+  --transition: 0.3s ease;
+  --shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Inter", system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* ----------- Utility-Klassen ----------- */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.muted {
+  color: var(--muted);
+}
+
+/* ----------- Header & Navigation ----------- */
+.site-header {
+  position: sticky;
+  top: 0;
+  background: rgba(15, 23, 36, 0.85);
+  backdrop-filter: blur(8px);
+  z-index: 100;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  transition: background var(--transition);
+}
+
+.nav-grid {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 0;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  font-weight: 700;
+  color: var(--text);
+  letter-spacing: 0.5px;
+}
+
+.main-nav ul {
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
+}
+
+.main-nav a {
+  text-decoration: none;
+  color: var(--muted);
+  transition: color var(--transition);
+}
+
+.main-nav a:hover {
+  color: var(--accent);
+}
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--text);
+  cursor: pointer;
+}
+
+.mobile-nav {
+  display: none;
+  background: var(--bg-light);
+  text-align: center;
+}
+
+.mobile-nav ul {
+  list-style: none;
+  padding: 1rem 0;
+}
+
+.mobile-nav a {
+  display: block;
+  padding: 0.75rem 0;
+  color: var(--text);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.mobile-nav a:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+/* ----------- Hero Section ----------- */
+.hero {
+  display: flex;
+  align-items: center;
+  padding: 6rem 0;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+  align-items: center;
+}
+
+.hero-text h1 {
+  font-size: 2.8rem;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.hero-text .lead {
+  color: var(--muted);
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+}
+
+.hero-cta {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.btn-primary,
+.btn-ghost {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radius);
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all var(--transition);
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: #000;
+}
+
+.btn-primary:hover {
+  transform: scale(1.05);
+  background: #ffd166;
+}
+
+.btn-ghost {
+  border: 2px solid var(--accent);
+  color: var(--accent);
+  background: transparent;
+}
+
+.btn-ghost:hover {
+  background: var(--accent);
+  color: #000;
+}
+
+.hero-stats {
+  display: flex;
+  gap: 2rem;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+}
+
+.hero-stats li {
+  list-style: none;
+}
+
+.hero-stats strong {
+  display: block;
+  font-size: 1.5rem;
+  color: var(--accent);
+}
+
+/* ----------- Timeline Section ----------- */
+.timeline {
+  background: var(--bg-light);
+  padding: 4rem 0;
+}
+
+.timeline-viewport {
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.timeline-item {
+  background: var(--card);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  box-shadow: var(--shadow);
+  transition: transform var(--transition), background var(--transition);
+  cursor: pointer;
+}
+
+.timeline-item:hover {
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.ti-year {
+  font-size: 1.8rem;
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.ti-title {
+  margin-top: 0.5rem;
+  font-size: 1.2rem;
+}
+
+.ti-excerpt {
+  color: var(--muted);
+  margin: 0.5rem 0 1rem;
+}
+
+.ti-more {
+  background: none;
+  border: 1px solid var(--accent);
+  color: var(--accent);
+  padding: 0.4rem 1rem;
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: all var(--transition);
+}
+
+.ti-more:hover {
+  background: var(--accent);
+  color: #000;
+}
+
+/* ----------- Modal (Timeline Detail) ----------- */
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal.show {
+  display: flex;
+  animation: fadeIn 0.3s ease forwards;
+}
+
+.modal-inner {
+  background: var(--card);
+  padding: 2rem;
+  border-radius: var(--radius);
+  max-width: 600px;
+  width: 90%;
+  position: relative;
+  box-shadow: var(--shadow);
+}
+
+.modal-close {
+  position: absolute;
+  top: 0.75rem;
+  right: 1rem;
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  color: var(--accent);
+  cursor: pointer;
+}
+
+/* ----------- Personen ----------- */
+.figures {
+  padding: 4rem 0;
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+}
+
+.card {
+  background: var(--card);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  transition: transform var(--transition);
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card-body {
+  padding: 1rem 1.5rem;
+}
+
+.card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+/* ----------- Legacy Section ----------- */
+.legacy {
+  background: var(--bg-light);
+  padding: 4rem 0;
+}
+
+.legacy-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.card.small {
+  padding: 1.5rem;
+}
+
+/* ----------- Quellen ----------- */
+.sources {
+  padding: 4rem 0;
+}
+
+.sources ul {
+  margin-top: 1rem;
+  padding-left: 1.5rem;
+}
+
+.sources li {
+  margin-bottom: 0.5rem;
+  color: var(--muted);
+}
+
+/* ----------- Footer ----------- */
+.site-footer {
+  background: #0b101a;
+  padding: 2rem 0;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.footer-grid {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+/* ----------- Animationen ----------- */
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+#preloader {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg);
+  z-index: 9999;
+}
+
+.pl-dot {
+  fill: var(--accent);
+  animation: blink 1.2s infinite ease-in-out alternate;
+}
+
+.pl-dot:nth-child(2) { animation-delay: 0.2s; }
+.pl-dot:nth-child(3) { animation-delay: 0.4s; }
+.pl-dot:nth-child(4) { animation-delay: 0.6s; }
+
+@keyframes blink {
+  from { opacity: 0.3; transform: scale(0.8); }
+  to { opacity: 1; transform: scale(1.2); }
+}
+
+/* ----------- Responsive Design ----------- */
+@media (max-width: 768px) {
+  .main-nav { display: none; }
+  .menu-toggle { display: block; }
+  .mobile-nav.show { display: block; animation: fadeIn 0.3s ease; }
+  .hero { padding: 4rem 0; }
+  .hero-text h1 { font-size: 2.2rem; }
+}
